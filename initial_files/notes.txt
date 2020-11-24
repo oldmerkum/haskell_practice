@@ -1,0 +1,46 @@
+Refs:
+http://learnyouahaskell.com/starting-out
+https://cryptopals.com/sets/1/challenges/1
+https://docs.haskellstack.org/en/stable/GUIDE/
+https://wiki.haskell.org/Dealing_with_binary_data
+
+Practice files in C:\Users\oldmerkum\Documents\haskell_practice
+
+Navigate to above dir and execute 'stack exec -- ghci'
+    Prompt for 'Prelude>'
+    
+Just finished section 3 of learnyouahaskell tutorial. Everything is pretty standard so far, except the talk
+about TypeClasses will probably require me to review it several times.
+
+## Types
+The type of a fxn or expression can be found using:
+:t <expr/fxn>
+e.g.
+:t 'a'
+'a' :: Char
+:t max
+max :: Ord a => a -> a -> a
+
+[Char] type is equivalent to String type.
+
+## Type variables
+A type variable can be of any type.
+e.g.
+
+:t head
+head :: [a] -> a
+
+It could be labeled anything, like b, person, item, but the convention is to use single chars.
+
+Functions with type variables are ``polymorphic functions``
+
+## Type classes
+Look at the result of:
+:t (==)
+(==) :: (Eq a) => a -> a -> Bool
+
+Everything before '=>' is a ``class contraint``.
+The equality function takes any two values that are of the same type and returns a Bool.
+The type of those two values must be a member of the ``Eq`` class (this is the class contstraint).
+
+!!!Next look at Syntax of functions again!!!
